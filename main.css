@@ -1,0 +1,117 @@
+/* General */
+
+html, body {
+    font-size: 14px;
+    margin: 0;
+    min-height: 180px;
+    padding: 0;
+    width: 330px;
+    font-family: sans-serif;
+}
+
+a:link, a:visited {
+    outline: 0;
+    text-decoration: None;
+    color: #2f2f2f;
+}
+
+/* Header */
+
+#modal-header {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: #2f2f2f;
+    border-bottom: 0.5px solid #dadada;
+    padding: 15px;
+}
+
+#logo-icon > img {
+    width: 30px;
+    padding-right: 10px;
+}
+
+.version {
+    color: #444;
+    font-size: 14px;
+}
+
+#username {
+    margin: 0;
+    padding: 10px 15px;
+    color: #444;
+    font-style: italic;
+}
+
+#options {
+    float:right;
+    font-size: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+#options:hover {
+    color: #000;
+}
+
+/* Icons */
+
+.modal-icons {
+    height: 50px;
+    padding: 15px;
+    padding-top: 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    text-align: right;
+}
+
+.flex:hover {
+    opacity: 0.8;
+}
+
+.flex img {
+    width: 140px;
+    background-color: #dadada;
+    border: 1px solid #f2f2f2;
+}
+
+.item-count {
+    position: relative;
+    color: #fff;
+    bottom: 25px;
+    right: 10px;
+    font-weight: 400;
+    text-shadow: 1px 1px #444;
+    height: 15px;
+}
+
+/* Options */
+
+#options-header {
+    text-align:center;
+    font-weight: 400;
+    margin: 0;
+    color: #2f2f2f;
+    padding: 15px;
+}
+
+#clear {
+    text-align: center;
+    margin: 0 50px;
+    width: 230px;
+}
+
+#tagline {
+    text-align: center;
+    margin-top: 30px;
+    color: #444;
+    font-style: italic;
+}
