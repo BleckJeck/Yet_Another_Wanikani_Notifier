@@ -25,3 +25,19 @@ function clear_options() {
 
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('clear').addEventListener('click', clear_options);
+
+// retrieve current status and updates checkbok
+function update_checkbox() {
+    chrome.storage.sync.get("notifyWKlessons", function(result) {
+        var lessonsenabled = result.notifyWKlessons;
+
+        // set to false if nothing in storage
+        if (typeof lessonsenabled === "undefined") {
+            chrome.storage.sync.set({"notifyWKlessons": false});
+        }
+
+        document.getElementById('notifylessons').checked = lessonsenabled;
+    })
+}
+
+update_checkbox();
