@@ -1,19 +1,25 @@
 // Saves options to chrome.storage
 function save_options() {
     let usertoken = document.getElementById('apikey').value;
+    let notifylessons = document.getElementById('notifylessons').checked;
 
-    chrome.storage.sync.set({"WKapikey": usertoken});
+    chrome.storage.sync.set({"notifyWKlessons": notifylessons});
+
+    if(usertoken.length > 0) {
+        chrome.storage.sync.set({"WKapikey": usertoken});
+    }
     
     let alert = document.getElementById('alert');
-    alert.innerHTML = 'API token saved';
+    alert.innerHTML = 'All saved! - Ready to go';
     setTimeout(function() {window.close();}, 2000);
 }
 
 function clear_options() {
     chrome.storage.sync.remove("WKapikey");
+    chrome.storage.sync.remove("notifyWKlessons");
     
     let alert = document.getElementById('alert');
-    alert.innerHTML = 'All cleared';
+    alert.innerHTML = 'All cleared! - Now add your API token';
     setTimeout(function() {window.close();}, 1000);
 }
 

@@ -52,7 +52,7 @@ chrome.storage.sync.get("WKapikey", function(result) {
             let username = responseBody.data.username;
             let level = responseBody.data.level;
 
-            document.getElementById("username").innerHTML = username + " - level " + level + '<span id="options">Not you?</span>';
+            document.getElementById("username").innerHTML = username + " - level " + level + '<span id="options">Settings</span>';
         })
         .then(() => document.getElementById("options").addEventListener('click', function() {
             chrome.runtime.openOptionsPage();
