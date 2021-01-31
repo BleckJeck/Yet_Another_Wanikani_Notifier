@@ -20,7 +20,6 @@ function clear_options() {
     
     let alert = document.getElementById('alert');
     alert.innerHTML = 'All cleared! - Now add your API token';
-    setTimeout(function() {window.close();}, 1000);
 }
 
 document.getElementById('save').addEventListener('click', save_options);
