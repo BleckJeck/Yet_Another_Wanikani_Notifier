@@ -2,7 +2,7 @@ function check() {
     chrome.storage.sync.get(["WKapikey","notifyWKlessons"], function(result) {
         var WKToken = result.WKapikey;
         var lessonsenabled = result.notifyWKlessons;
-  
+
         function apiEndpoint(path, token) {
             let requestHeaders =
                 new Headers({
@@ -16,7 +16,7 @@ function check() {
                 });
             return request;
         }
-  
+
         if (typeof WKToken === "undefined") {
             chrome.browserAction.setBadgeText({text: ''});
         } else {
@@ -27,7 +27,7 @@ function check() {
                     if(responseBody.total_count > 0) {
                         chrome.browserAction.setBadgeText({text: String(responseBody.total_count)});
                         chrome.browserAction.setBadgeBackgroundColor({color: '#00aaff'});
-                    
+
                     } else if(lessonsenabled) {
                         fetch(apiEndpoint('assignments?immediately_available_for_lessons', WKToken))
                             .then(response => response.json())
@@ -46,7 +46,7 @@ function check() {
                 })
         }
     })
-    window.setTimeout(check, 10000);
+    window.setTimeout(check, 60000);
 }
 
 check();

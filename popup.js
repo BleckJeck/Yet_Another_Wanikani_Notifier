@@ -19,14 +19,14 @@ chrome.storage.sync.get("WKapikey", function(result) {
   if (typeof WKToken === "undefined") {
     chrome.runtime.openOptionsPage();
 
-  } else { // API Token is founs in storage
+  } else { // API Token is found in storage
 
     // fetch lessons count
     fetch(apiEndpoint('assignments?immediately_available_for_lessons', WKToken))
         .then(response => response.json())
         .then(responseBody => {
             let lessonItemsCount = responseBody.total_count;
-            
+
             if(lessonItemsCount > 0) {
               document.getElementById("lesson-items").innerHTML = lessonItemsCount;
               document.getElementById("lesson-image").style.backgroundColor = "#f100a1";
