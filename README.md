@@ -15,3 +15,6 @@ The box is unticked by deafult, so if you don't need the constant reminder there
 If you like the pressure however, you can go and tick the box.
 
 You'll get a badge with your lessons count ONLY if you're done with your reviews.
+
+## NEW in version 1.1.3
+Improved UX/UI - thanks to [Ben Grant](https://github.com/GRA0007)!
