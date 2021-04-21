@@ -28,7 +28,9 @@ document.getElementById('clear').addEventListener('click', clear_options);
 // Retrieve options from chrome.storage
 function load_options() {
     chrome.storage.sync.get(["notifyWKlessons", "WKapikey"], function(result) {
-        document.getElementById('apikey').value = result.WKapikey;
+        if (result.WKapikey != undefined) {
+            document.getElementById('apikey').value = result.WKapikey;
+        }
         
         // set to false if nothing in storage
         if (typeof result.notifyWKlessons === "undefined") {
