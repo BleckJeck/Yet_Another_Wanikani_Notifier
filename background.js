@@ -46,7 +46,7 @@ function check() {
                 })
         }
     })
-    window.setTimeout(check, 60000);
+    window.setTimeout(check, 10000);
 }
 
 check();
