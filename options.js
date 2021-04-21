@@ -16,7 +16,10 @@ function save_options() {
 
 function clear_options() {
     chrome.storage.sync.remove("WKapikey");
+    document.getElementById('apikey').value = "";
+
     chrome.storage.sync.remove("notifyWKlessons");
+    document.getElementById('notifylessons').checked = false;
 
     let alert = document.getElementById('alert');
     alert.innerHTML = 'All cleared! - Now add your API token';
