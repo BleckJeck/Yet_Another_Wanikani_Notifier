@@ -64,3 +64,6 @@ chrome.storage.sync.get("WKapikey", function(result) {
 document.getElementById("options").addEventListener('click', function() {
   chrome.runtime.openOptionsPage();
 })
+
+// updates badge when opening the pop-up
+chrome.runtime.sendMessage({do: "check"});

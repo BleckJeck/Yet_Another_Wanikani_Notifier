@@ -14,6 +14,8 @@ function save_options() {
     let alert = document.getElementById('alert');
     alert.innerHTML = 'All saved! - Ready to go';
     setTimeout(function() {window.close();}, 2000);
+
+    chrome.runtime.sendMessage({do: "check"});
 }
 
 function clear_options() {
@@ -28,6 +30,8 @@ function clear_options() {
 
     let alert = document.getElementById('alert');
     alert.innerHTML = 'All cleared! - Now add your API token';
+
+    chrome.runtime.sendMessage({do: "check"});
 }
 
 document.getElementById('save').addEventListener('click', save_options);
